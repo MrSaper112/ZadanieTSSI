@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wiktor Moskwa </title>
+</head>
+<body>
+<style>
+    body{
+        text-align: center;
+    }
+    #color, #color1 {
+        background-color: rgb(87, 221, 221); 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+  }
+
+</style>
+
+    <h1>Wiktor Moskwa - Zadanie</h1>
+    <h2>Zmiana kolorów w napisie pobieranej z listy js</h2>
+
+    <button id="color" onclick="changeColor()">Color Button from list</button>
+    <button id="color1" onclick="randomColor()">Random Color Button</button>
+
+<script>
+    const colors = ["red", "green", "blue", "yellow", "lightgreen"];   
+    var i = 0;
+    function changeColor(){
+        if(i<colors.length){
+            document.getElementById("color").style.backgroundColor = colors[i];
+            i++
+        }else{
+            i = 0
+            document.getElementById("color").style.backgroundColor = "#57dddd";
+        }
+    }
+
+    function randomColor(){
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        color = "#" + randomColor;
+        document.getElementById("color1").style.backgroundColor = color;
+    }
+</script>
+
+</body>
+</html>
